@@ -34,10 +34,10 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Check for the Nagios process
-  - ps -ef | grep nagios | grep conf | grep -v grep
+  - ps -ef | grep nagios | grep -v grep
 
   # Check for the listening HTTP port
-  - ss -lnt | grep 80
+  - ss -lnt | grep :80
 
 notifications:
 webhooks: https://galaxy.ansible.com/api/v1/notifications/
