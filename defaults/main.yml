@@ -1,6 +1,6 @@
 ---
 # defaults file for ansible-install-check_mk-server
 
-ansible_install_check_mk_server_version: 1.2.8p23
+ansible_install_check_mk_server_version: 1.4.0
 ansible_install_check_mk_server_source_url: https://mathias-kettner.de/support/{{ ansible_install_check_mk_server_version }}/check-mk-raw-{{ ansible_install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb
 ansible_install_check_mk_server_site: test
