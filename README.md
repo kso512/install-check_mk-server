@@ -2,14 +2,13 @@
 
 # ansible-install-check_mk-server
 
-A role to install Check_MK RAW and set up an initial site.
+An [Ansible](https://www.ansible.com/) [Role](http://docs.ansible.com/ansible/playbooks_roles.html#roles) to install [Check_MK RAW](http://mathias-kettner.com/check_mk_introduction.html) and set up an initial site.
+
+I do **NOT** recommend the default configuration for unprotected connection directly to the Internet, as the server configuration includes unencrypted HTTP access.
 
 ## Requirements
 
-Uses the following Core Ansible modules:
-
-- apt
-- command
+If the server has a firewall enabled, it may need to be altered to allow incoming packets on TCP port 80 for the web access, and TCP port 514, and UDP ports 162 & 514.
 
 ## Role Variables
 
