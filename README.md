@@ -8,7 +8,7 @@ I do **NOT** recommend the default configuration for unprotected connection dire
 
 ## Requirements
 
-If the server has a firewall enabled, it may need to be altered to allow incoming packets on TCP port 80 for the web access, and TCP port 514, and UDP ports 162 & 514.
+If the server has a firewall enabled, it may need to be altered to allow incoming packets on TCP port 80 for the web portal access, and TCP port 514, and UDP ports 162 & 514 for event console input.
 
 ## Role Variables
 
@@ -20,7 +20,7 @@ If the server has a firewall enabled, it may need to be altered to allow incomin
 
 ## Dependencies
 
-Depends on APT/Debian support.
+This role depends on no other roles.
 
 ## Example Playbook
 
