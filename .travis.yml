@@ -31,7 +31,7 @@ script:
 
   # Run the playbook and hope for no errors
   - >
-    docker exec --tty "$(cat ${container_id})" env TERM=xterm
+    travis_wait docker exec --tty "$(cat ${container_id})" env TERM=xterm
     ansible-playbook /etc/ansible/roles/ansible-install-check_mk-server/tests/test.yml
 
   # Run the playbook one more time and hope for no changes to make sure its idempotent
