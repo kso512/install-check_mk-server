@@ -32,3 +32,12 @@
   tags:
     - ansible-install-check_mk-server
     - commands
+
+- name: Start Apache2
+  service:
+    name: apache2
+    state: started
+    enabled: yes
+  tags:
+    - ansible-install-check_mk-server
+    - services
