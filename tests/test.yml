@@ -2,4 +2,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-install-check_mk-server
+    - role_under_test
+
