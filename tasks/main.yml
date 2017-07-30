@@ -1,6 +1,15 @@
 ---
 # tasks file for ansible-install-check_mk-server
 
+- name: Install pre-requisites
+  apt:
+    name: "{{ ansible_install_check_mk_server_prereqs }}"
+    state: present
+    update_cache: yes
+  tags:
+    - ansible-install-check_mk-server
+    - packaging
+
 - name: Install Check_MK RAW
   apt:
     deb: "{{ ansible_install_check_mk_server_source_url }}"
