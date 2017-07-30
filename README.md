@@ -1,10 +1,16 @@
 [![Build Status](https://travis-ci.org/kso512/ansible-install-check_mk-server.svg?branch=master)](https://travis-ci.org/kso512/ansible-install-check_mk-server)
 
-# ansible-install-check_mk-server
+# [ansible-install-check_mk-server](https://galaxy.ansible.com/kso512/install-check_mk-server/)
 
 An [Ansible](https://www.ansible.com/) [Role](http://docs.ansible.com/ansible/playbooks_roles.html#roles) to install [Check_MK RAW](http://mathias-kettner.com/check_mk_introduction.html) and set up an initial site.
 
 I do **NOT** recommend the default configuration for unprotected connection directly to the Internet, as the server configuration includes unencrypted HTTP access.
+
+Tested with [Travis continuous integration](https://travis-ci.org/) on the following distributions:
+
+- [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
+- [Ubuntu 14.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
+- [Ubuntu 16.04 LTS "Trusty Tahr"](http://releases.ubuntu.com/trusty/)
 
 ## Requirements
 
