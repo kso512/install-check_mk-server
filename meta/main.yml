@@ -8,6 +8,9 @@ galaxy_info:
   min_ansible_version: 2.2
 
   platforms:
+    - name: EL
+      versions:
+        - 7
     - name: Debian
       versions:
         - stretch
@@ -27,5 +30,9 @@ galaxy_info:
     - stretch
     - trusty
     - xenial
+    - centos
+    - el
+    - centos7
+    - el7
 
 dependencies: []
