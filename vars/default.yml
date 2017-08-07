@@ -4,6 +4,6 @@
 ansible_install_check_mk_server_prereqs:
   - apt-utils
   - cron
-ansible_install_check_mk_server_source_url: https://mathias-kettner.de/support/{{ ansible_install_check_mk_server_version }}/check-mk-raw-{{ ansible_install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb
+ansible_install_check_mk_server_source: check-mk-raw-{{ ansible_install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb
 ansible_install_check_mk_server_web_service: apache2
 
