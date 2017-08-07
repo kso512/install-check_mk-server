@@ -5,7 +5,7 @@
   include_vars:
     file: "{{ item }}"
   with_first_found:
-    - "{{ ansible_distribution_release }}.yml"
+    - "{{ ansible_distribution }}.yml"
     - "default.yml"
   tags:
     - ansible-install-check_mk-server

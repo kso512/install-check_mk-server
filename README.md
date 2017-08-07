@@ -33,7 +33,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | ansible_install_check_mk_server_version | Version of Check_MK RAW to install | `1.4.0p9` |
 | ansible_install_check_mk_server_web_service | Name of the Apache2 service to control | `apache2` |
 
-### "Core" distro Overrides
+### CentOS Distro Overrides
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
