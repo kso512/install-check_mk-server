@@ -1,19 +1,52 @@
 ---
 # tasks file for ansible-install-check_mk-server
 
-- name: Install pre-requisites
+- name: Set distro-specific variables
+  include_vars:
+    file: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution_release }}.yml"
+    - "default.yml"
+  tags:
+    - ansible-install-check_mk-server
+    - packages
+    - files
+    - users
+
+- name: Install pre-requisites (APT)
   apt:
     name: "{{ ansible_install_check_mk_server_prereqs }}"
     state: present
     update_cache: yes
+  when: ansible_pkg_mgr == "apt"
   tags:
     - ansible-install-check_mk-server
     - packaging
 
-- name: Install Check_MK RAW
+- name: Install pre-requisites (YUM)
+  yum:
+    name: "{{ ansible_install_check_mk_server_prereqs }}"
+    state: present
+    update_cache: yes
+  when: ansible_pkg_mgr == "yum"
+  tags:
+    - ansible-install-check_mk-server
+    - packaging
+
+- name: Install Check_MK RAW (APT)
   apt:
     deb: "{{ ansible_install_check_mk_server_source_url }}"
     state: present
+  when: ansible_pkg_mgr == "apt"
+  tags:
+    - ansible-install-check_mk-server
+    - packaging
+
+- name: Install Check_MK RAW (YUM)
+  yum:
+    name: "{{ ansible_install_check_mk_server_source_url }}"
+    state: present
+  when: ansible_pkg_mgr == "yum"
   tags:
     - ansible-install-check_mk-server
     - packaging
@@ -44,7 +77,7 @@
 
 - name: Start Apache2
   service:
-    name: apache2
+    name: "{{ ansible_install_check_mk_server_web_service }}"
     state: started
     enabled: yes
   tags:
