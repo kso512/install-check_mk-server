@@ -1,6 +1,7 @@
 ---
 env:
   # Provide a list of OSes we want to use for testing.
+  - distro: centos6
   - distro: centos7
   - distro: debian9
   - distro: ubuntu1404

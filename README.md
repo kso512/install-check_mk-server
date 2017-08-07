@@ -8,6 +8,7 @@ I do **NOT** recommend the default configuration for unprotected connection dire
 
 Tested with [Travis continuous integration](https://travis-ci.org/) on the following distributions:
 
+- [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6)
 - [CentOS-7](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7)
 - [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
 - [Ubuntu 14.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
@@ -27,7 +28,8 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | -------- | ----------- | ----- |
 | ansible_install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apt-utils` `cron` |
 | ansible_install_check_mk_server_site | Name of initial Check_MK RAW 'site' to provision | `test` |
-| ansible_install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://mathias-kettner.de/support/{{ ansible_install_check_mk_server_version }}/check-mk-raw-{{ ansible_install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb` |
+| ansible_install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ ansible_install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb`
+| ansible_install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://mathias-kettner.de/support/{{ ansible_install_check_mk_server_version }}/{{ ansible_install_check_mk_server_source }}` |
 | ansible_install_check_mk_server_version | Version of Check_MK RAW to install | `1.4.0p9` |
 | ansible_install_check_mk_server_web_service | Name of the Apache2 service to control | `apache2` |
 
@@ -36,7 +38,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
 | ansible_install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` |
-| ansible_install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://mathias-kettner.de/support/{{ ansible_install_check_mk_server_version }}/check-mk-raw-{{ ansible_install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-56.x86_64.rpm` |
+| ansible_install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ ansible_install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-56.x86_64.rpm`
 | ansible_install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
 ## Dependencies
