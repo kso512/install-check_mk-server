@@ -33,9 +33,19 @@
     - ansible-install-check_mk-server
     - packaging
 
+- name: Download Check_MK RAW
+  get_url:
+    dest: /opt
+    mode: 0755
+    url: "{{ ansible_install_check_mk_server_source_url }}"
+  tags:
+    - ansible-install-check_mk-server
+    - packages
+    - files
+
 - name: Install Check_MK RAW (APT)
   apt:
-    deb: "{{ ansible_install_check_mk_server_source_url }}"
+    deb: "/opt/{{ ansible_install_check_mk_server_source }}"
     state: present
   when: ansible_pkg_mgr == "apt"
   tags:
@@ -44,7 +54,7 @@
 
 - name: Install Check_MK RAW (YUM)
   yum:
-    name: "{{ ansible_install_check_mk_server_source_url }}"
+    name: "/opt/{{ ansible_install_check_mk_server_source }}"
     state: present
   when: ansible_pkg_mgr == "yum"
   tags:
