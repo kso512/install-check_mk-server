@@ -8,11 +8,12 @@ I do **NOT** recommend the default configuration for unprotected connection dire
 
 Tested with [Travis continuous integration](https://travis-ci.org/) on the following distributions:
 
-- [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6)
+- [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.9)
 - [CentOS-7](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7)
 - [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
-- [Ubuntu 14.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
-- [Ubuntu 16.04 LTS "Trusty Tahr"](http://releases.ubuntu.com/trusty/)
+- [Ubuntu 12.04 LTS "Precise Pangolin"](http://releases.ubuntu.com/precise)
+- [Ubuntu 14.04 LTS "Trusty Tahr"](http://releases.ubuntu.com/trusty/)
+- [Ubuntu 16.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
 
 ## Requirements
 

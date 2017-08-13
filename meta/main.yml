@@ -17,6 +17,7 @@ galaxy_info:
         - stretch
     - name: Ubuntu
       versions:
+        - precise
         - trusty
         - xenial
 
@@ -29,6 +30,7 @@ galaxy_info:
     - ubuntu
     - debian
     - stretch
+    - precise
     - trusty
     - xenial
     - centos
