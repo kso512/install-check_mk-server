@@ -14,6 +14,7 @@ galaxy_info:
         - 7
     - name: Debian
       versions:
+        - jessie
         - stretch
     - name: Ubuntu
       versions:
@@ -29,13 +30,13 @@ galaxy_info:
     - cre
     - ubuntu
     - debian
+    - jessie
     - stretch
     - precise
     - trusty
     - xenial
     - centos
     - el
-    - centos7
-    - el7
+    - monitoring
 
 dependencies: []
