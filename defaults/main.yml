@@ -3,5 +3,5 @@
 
 ansible_install_check_mk_server_site: test
 ansible_install_check_mk_server_source_url: https://mathias-kettner.de/support/{{ ansible_install_check_mk_server_version }}/{{ ansible_install_check_mk_server_source }}
-ansible_install_check_mk_server_version: 1.4.0p9
+ansible_install_check_mk_server_version: 1.4.0p10
 
