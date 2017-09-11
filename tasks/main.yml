@@ -1,5 +1,5 @@
 ---
-# tasks file for ansible-install-check_mk-server
+# tasks file for install-check-mk-server
 
 - name: Set distro-specific variables
   include_vars:
@@ -8,7 +8,7 @@
     - "{{ ansible_distribution }}.yml"
     - "default.yml"
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - packages
     - files
     - users
@@ -20,7 +20,7 @@
     update_cache: yes
   when: ansible_pkg_mgr == "apt"
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - packaging
 
 - name: Install pre-requisites (YUM)
@@ -30,7 +30,7 @@
     update_cache: yes
   when: ansible_pkg_mgr == "yum"
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - packaging
 
 - name: Download Check_MK RAW
@@ -39,7 +39,7 @@
     mode: 0755
     url: "{{ ansible_install_check_mk_server_source_url }}"
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - packages
     - files
 
@@ -49,7 +49,7 @@
     state: present
   when: ansible_pkg_mgr == "apt"
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - packaging
 
 - name: Install Check_MK RAW (YUM)
@@ -58,7 +58,7 @@
     state: present
   when: ansible_pkg_mgr == "yum"
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - packaging
 
 - name: Setup OMD
@@ -66,7 +66,7 @@
   args:
     creates: /opt/omd  
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - commands
 
 - name: Create OMD site
@@ -74,7 +74,7 @@
   args:
     creates: /opt/omd/sites/{{ ansible_install_check_mk_server_site }}
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - commands
 
 - name: Start OMD site
@@ -82,7 +82,7 @@
   args:
     creates: /opt/omd/sites/{{ ansible_install_check_mk_server_site }}/tmp/apache/run/apache.pid
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - commands
 
 - name: Start Apache2
@@ -91,5 +91,5 @@
     state: started
     enabled: yes
   tags:
-    - ansible-install-check_mk-server
+    - install-check-mk-server
     - services
