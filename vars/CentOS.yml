@@ -1,8 +1,8 @@
 ---
 # vars file for ansible-install-check_mk-server: Core
 
-ansible_install_check_mk_server_prereqs:
+install_check_mk_server_prereqs:
   - cronie
-ansible_install_check_mk_server_source: check-mk-raw-{{ ansible_install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-57.x86_64.rpm
-ansible_install_check_mk_server_web_service: httpd
+install_check_mk_server_source: check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-57.x86_64.rpm
+install_check_mk_server_web_service: httpd
 

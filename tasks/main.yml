@@ -15,7 +15,7 @@
 
 - name: Install pre-requisites (APT)
   apt:
-    name: "{{ ansible_install_check_mk_server_prereqs }}"
+    name: "{{ install_check_mk_server_prereqs }}"
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == "apt"
@@ -25,7 +25,7 @@
 
 - name: Install pre-requisites (YUM)
   yum:
-    name: "{{ ansible_install_check_mk_server_prereqs }}"
+    name: "{{ install_check_mk_server_prereqs }}"
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == "yum"
@@ -37,7 +37,7 @@
   get_url:
     dest: /opt
     mode: 0755
-    url: "{{ ansible_install_check_mk_server_source_url }}"
+    url: "{{ install_check_mk_server_source_url }}"
   tags:
     - install-check-mk-server
     - packages
@@ -45,7 +45,7 @@
 
 - name: Install Check_MK RAW (APT)
   apt:
-    deb: "/opt/{{ ansible_install_check_mk_server_source }}"
+    deb: "/opt/{{ install_check_mk_server_source }}"
     state: present
   when: ansible_pkg_mgr == "apt"
   tags:
@@ -54,7 +54,7 @@
 
 - name: Install Check_MK RAW (YUM)
   yum:
-    name: "/opt/{{ ansible_install_check_mk_server_source }}"
+    name: "/opt/{{ install_check_mk_server_source }}"
     state: present
   when: ansible_pkg_mgr == "yum"
   tags:
@@ -70,24 +70,24 @@
     - commands
 
 - name: Create OMD site
-  command: omd create {{ ansible_install_check_mk_server_site }}
+  command: omd create {{ install_check_mk_server_site }}
   args:
-    creates: /opt/omd/sites/{{ ansible_install_check_mk_server_site }}
+    creates: /opt/omd/sites/{{ install_check_mk_server_site }}
   tags:
     - install-check-mk-server
     - commands
 
 - name: Start OMD site
-  command: omd start {{ ansible_install_check_mk_server_site }}
+  command: omd start {{ install_check_mk_server_site }}
   args:
-    creates: /opt/omd/sites/{{ ansible_install_check_mk_server_site }}/tmp/apache/run/apache.pid
+    creates: /opt/omd/sites/{{ install_check_mk_server_site }}/tmp/apache/run/apache.pid
   tags:
     - install-check-mk-server
     - commands
 
 - name: Start Apache2
   service:
-    name: "{{ ansible_install_check_mk_server_web_service }}"
+    name: "{{ install_check_mk_server_web_service }}"
     state: started
     enabled: yes
   tags:
