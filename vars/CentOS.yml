@@ -1,5 +1,5 @@
 ---
-# vars file for ansible-install-check_mk-server: Core
+# vars file for install-check_mk-server: CentOS
 
 install_check_mk_server_prereqs:
   - cronie

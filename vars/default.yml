@@ -1,5 +1,5 @@
 ---
-# vars file for ansible-install-check_mk-server: default
+# vars file for install-check_mk-server: default
 
 install_check_mk_server_prereqs:
   - apache2
