@@ -18,6 +18,14 @@ Tested with [Travis continuous integration](https://travis-ci.org/) on the follo
 
 ## Requirements
 
+Required on host that executes role with APT:
+- python-apt (python 2)
+- python3-apt (python 3)
+- aptitude (before 2.4)
+
+Required on host that executes role with YUM:
+- yum
+
 If the server has a firewall enabled, it may need to be altered to allow incoming packets on TCP port 80 for the web portal access, and TCP port 514, and UDP ports 162 & 514 for event console input.
 
 ## Role Variables
