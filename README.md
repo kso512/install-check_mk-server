@@ -4,6 +4,8 @@
 
 An [Ansible](https://www.ansible.com/) [Role](http://docs.ansible.com/ansible/playbooks_roles.html#roles) to install [Check_MK RAW](http://mathias-kettner.com/check_mk_introduction.html) and set up an initial site.
 
+All tasks are tagged with `install-check-mk-server`.
+
 I do **NOT** recommend the default configuration for unprotected connection directly to the Internet, as the server configuration includes unencrypted HTTP access.
 
 Tested with [Travis continuous integration](https://travis-ci.org/) on the following distributions:
