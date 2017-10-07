@@ -3,6 +3,6 @@
 
 install_check_mk_server_prereqs:
   - cronie
-install_check_mk_server_source: check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-60.x86_64.rpm
+install_check_mk_server_source: check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-61.x86_64.rpm
 install_check_mk_server_web_service: httpd
 
