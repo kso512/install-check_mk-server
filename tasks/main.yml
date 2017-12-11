@@ -35,13 +35,13 @@
   tags:
     - install-check-mk-server
 
-- name: If /etc/fstab is empty, enter a comment line | LINEINFILE
+- name: If /etc/fstab does not exist enter a comment line | LINEINFILE
   lineinfile:
     create: yes
     state: present
     line: "# /etc/fstab cannot be empty for omd create test to work"
     path: /etc/fstab
-  when: stat_etc_fstab > 0
+  when: stat_etc_fstab.stat.exists == false
   tags:
     - install-check-mk-server
 
