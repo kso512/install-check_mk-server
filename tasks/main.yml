@@ -28,6 +28,23 @@
   tags:
     - install-check-mk-server
 
+- name: Find out if /etc/fstab is empty | STAT
+  stat:
+    path: /etc/fstab
+  register: stat_etc_fstab
+  tags:
+    - install-check-mk-server
+
+- name: If /etc/fstab is empty, enter a comment line | LINEINFILE
+  lineinfile:
+    create: yes
+    state: present
+    line: "# /etc/fstab cannot be empty for omd create test to work"
+    path: /etc/fstab
+  when: stat_etc_fstab > 0
+  tags:
+    - install-check-mk-server
+
 - name: Download Check_MK RAW | GET_URL
   get_url:
     dest: /opt
