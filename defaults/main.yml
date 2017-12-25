@@ -1,8 +1,8 @@
 ---
 # defaults file for install-check_mk-server
 
-install_check_mk_server_build: 68
+install_check_mk_server_build: 69
 install_check_mk_server_site: test
 install_check_mk_server_source_url: https://mathias-kettner.de/support/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}
-install_check_mk_server_version: 1.4.0p21
+install_check_mk_server_version: 1.4.0p22
 
