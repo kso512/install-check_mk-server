@@ -11,6 +11,7 @@ I do **NOT** recommend the default configuration for unprotected connection dire
 Tested with [Travis continuous integration](https://travis-ci.org/) on the following distributions:
 
 - [CentOS-7](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7)
+- [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.9)
 - [Debian 8 "Jessie"](https://www.debian.org/releases/jessie/)
 - [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
 - [Ubuntu 12.04 LTS "Precise Pangolin"](http://releases.ubuntu.com/precise)
