@@ -85,8 +85,8 @@ docker exec --tty $container_id env TERM=xterm ansible-playbook /etc/ansible/rol
 printf "\n"
 
 # Run Ansible playbook.
-printf ${green}"Running command: docker exec $container_id env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/$playbook"${neutral}
-docker exec $container_id env TERM=xterm env ANSIBLE_FORCE_COLOR=1 ansible-playbook /etc/ansible/roles/role_under_test/tests/$playbook
+printf ${green}"Running command: docker exec $container_id env TERM=xterm ansible-playbook --diff -v /etc/ansible/roles/role_under_test/tests/$playbook\n"${neutral}
+docker exec $container_id env TERM=xterm env ANSIBLE_FORCE_COLOR=1 ansible-playbook --diff -v /etc/ansible/roles/role_under_test/tests/$playbook
 
 if [ "$test_idempotence" = true ]; then
   # Run Ansible playbook again (idempotence test).
@@ -99,11 +99,22 @@ if [ "$test_idempotence" = true ]; then
     || (printf ${red}'Idempotence test: fail'${neutral}"\n" && exit 1)
 fi
 
+printf ${green}"\nRunning checks.\n"${neutral}
+
 # Check for the Nagios process
 docker exec $container_id ps -ef | grep nagios | grep -v grep
 
+printf "\n"
+
 # Check for the listening HTTP port
 docker exec $container_id ss -lnt | grep :80
+
+printf "\n"
+
+# Check for the creation log
+docker exec $container_id cat /opt/omd/sites/test/omd-create.log
+
+printf "\n\n"
 
 # Remove the Docker container (if configured).
 if [ "$cleanup" = true ]; then
