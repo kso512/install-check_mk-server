@@ -80,6 +80,18 @@
   command: omd create {{ install_check_mk_server_site }}
   args:
     creates: /opt/omd/sites/{{ install_check_mk_server_site }}
+  register: install_check_mk_server_omd_create
+  tags:
+    - install-check-mk-server
+
+- name: Log captured creation task | COPY
+  copy:
+    content: "{{ install_check_mk_server_omd_create }}"
+    dest: /opt/omd/sites/{{ install_check_mk_server_site }}/omd-create.log
+    group: "{{ install_check_mk_server_site }}"
+    owner: "{{ install_check_mk_server_site }}"
+    mode: 0600
+    force: no
   tags:
     - install-check-mk-server
 
