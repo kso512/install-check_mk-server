@@ -1,12 +1,9 @@
 galaxy_info:
   author: Chris Lindbergh
   description: A role to install Check_MK RAW and set up an initial site.
-  company: TinkerMill
-
+  company: Cold Creek Solutions, Inc.
   license: BSD
-
   min_ansible_version: 2.2
-
   platforms:
     - name: EL
       versions:
@@ -21,9 +18,8 @@ galaxy_info:
         - precise
         - trusty
         - xenial
-
   galaxy_tags:
-    - CheckMK
+    - checkmk
     - check
     - mk
     - raw
@@ -38,6 +34,4 @@ galaxy_info:
     - centos
     - el
     - monitoring
-
 dependencies: []
-

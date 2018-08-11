@@ -1,8 +1,6 @@
 ---
 # vars file for install-check_mk-server: CentOS
-
 install_check_mk_server_prereqs:
   - cronie
 install_check_mk_server_source: check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm
 install_check_mk_server_web_service: httpd
-
