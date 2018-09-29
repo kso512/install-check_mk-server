@@ -23,7 +23,6 @@ Tested with [Travis continuous integration](https://travis-ci.org/) on the follo
 Required on host that executes role with APT:
 - python-apt (python 2)
 - python3-apt (python 3)
-- aptitude (before 2.4)
 
 Required on host that executes role with YUM:
 - yum
@@ -38,8 +37,9 @@ To enable multi-distro support, the role defines distro-specific variables with 
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
+| install_check_mk_server_adminpw | Optional password for `cmkadmin` user | undefined |
 | install_check_mk_server_build | Build number included in RPM source filename | `38` |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apt-utils` `cron` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apt-utils` `cron` `python-passlib` |
 | install_check_mk_server_site | Name of initial Check_MK RAW 'site' to provision | `test` |
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb`
 | install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://mathias-kettner.de/support/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}` |
@@ -50,7 +50,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python-passlib` |
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm`
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
@@ -73,4 +73,5 @@ BSD
 ## Author Information
 
 > Chris Lindbergh
+> sylekta
 
