@@ -81,6 +81,19 @@
     owner: "{{ install_check_mk_server_site }}"
     mode: 0600
     force: no
+  when: install_check_mk_server_adminpw is undefined
+  tags:
+    - install-check-mk-server
+- name: Change OMD site admin password | HTPASSWD
+  htpasswd:
+   path: /opt/omd/sites/{{install_check_mk_server_site}}/etc/htpasswd
+   name: cmkadmin
+   password: "{{ install_check_mk_server_adminpw }}"
+  become: true
+  become_user: "{{ install_check_mk_server_site }}"
+  vars:
+    ansible_ssh_pipelining: yes
+  when: install_check_mk_server_adminpw is defined
   tags:
     - install-check-mk-server
 - name: Start OMD site | COMMAND
