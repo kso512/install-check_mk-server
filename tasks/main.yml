@@ -36,7 +36,7 @@
     state: present
     line: "# /etc/fstab cannot be empty for omd create test to work"
     path: /etc/fstab
-  when: stat_etc_fstab.stat.exists == false
+  when: not stat_etc_fstab.stat.exists
   tags:
     - install-check-mk-server
 - name: Download Check_MK RAW | GET_URL
@@ -63,7 +63,7 @@
 - name: Setup OMD | COMMAND
   command: omd setup
   args:
-    creates: /opt/omd  
+    creates: /opt/omd
   tags:
     - install-check-mk-server
 - name: Create OMD site | COMMAND
@@ -86,7 +86,7 @@
     - install-check-mk-server
 - name: Change OMD site admin password | HTPASSWD
   htpasswd:
-   path: /opt/omd/sites/{{install_check_mk_server_site}}/etc/htpasswd
+   path: /opt/omd/sites/{{ install_check_mk_server_site }}/etc/htpasswd
    name: cmkadmin
    password: "{{ install_check_mk_server_adminpw }}"
   become: true
