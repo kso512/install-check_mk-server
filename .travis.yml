@@ -8,6 +8,7 @@ env:
   - distro: ubuntu1204
   - distro: ubuntu1404
   - distro: ubuntu1604
+  - distro: ubuntu1804
 services:
   # Tell Travis to start Docker when it brings up an environment.
   - docker
