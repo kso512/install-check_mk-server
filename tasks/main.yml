@@ -39,6 +39,10 @@
   when: not stat_etc_fstab.stat.exists
   tags:
     - install-check-mk-server
+- name: Test if Check_MK RPM is on disk already | STAT
+  stat:
+    path: "/opt/{{ install_check_mk_server_source}}"
+  register: check_mk_rpm
 - name: Download Check_MK RAW | GET_URL
   get_url:
     dest: /opt
@@ -46,6 +50,7 @@
     url: "{{ install_check_mk_server_source_url }}"
   tags:
     - install-check-mk-server
+  when: not check_mk_rpm.stat.exists
 - name: Install Check_MK RAW | APT
   apt:
     deb: "/opt/{{ install_check_mk_server_source }}"
