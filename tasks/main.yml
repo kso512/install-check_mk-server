@@ -40,6 +40,13 @@
   when: not stat_etc_fstab.stat.exists
   tags:
     - install-check-mk-server
+- name: Make sure the man8 folder exists | FILE
+  file:
+    path: /usr/share/man/man8
+    state: directory
+    mode: 0755
+  tags:
+    - install-check-mk-server
 - name: Download Check_MK RAW | GET_URL
   get_url:
     dest: /opt
