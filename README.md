@@ -14,7 +14,6 @@ Tested with [Travis continuous integration](https://travis-ci.org/) on the follo
 - [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.9)
 - [Debian 8 "Jessie"](https://www.debian.org/releases/jessie/)
 - [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
-- [Ubuntu 12.04 LTS "Precise Pangolin"](http://releases.ubuntu.com/precise)
 - [Ubuntu 14.04 LTS "Trusty Tahr"](http://releases.ubuntu.com/trusty/)
 - [Ubuntu 16.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
 - [Ubuntu 18.04 LTS "Bionic Beaver"](http://releases.ubuntu.com/bionic/)
@@ -44,7 +43,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | install_check_mk_server_site | Name of initial Check_MK RAW 'site' to provision | `test` |
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb`
 | install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://mathias-kettner.de/support/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}` |
-| install_check_mk_server_version | Version of Check_MK RAW to install | `1.5.0p7` |
+| install_check_mk_server_version | Version of Check_MK RAW to install | `1.5.0p11` |
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `apache2` |
 
 ### CentOS Distro Overrides

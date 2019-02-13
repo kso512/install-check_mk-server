@@ -15,7 +15,6 @@ galaxy_info:
         - stretch
     - name: Ubuntu
       versions:
-        - precise
         - trusty
         - xenial
   galaxy_tags:
@@ -28,7 +27,7 @@ galaxy_info:
     - debian
     - jessie
     - stretch
-    - precise
+    - bionic
     - trusty
     - xenial
     - centos
