@@ -17,6 +17,7 @@ Tested with [Travis continuous integration](https://travis-ci.org/) on the follo
 - [Ubuntu 12.04 LTS "Precise Pangolin"](http://releases.ubuntu.com/precise)
 - [Ubuntu 14.04 LTS "Trusty Tahr"](http://releases.ubuntu.com/trusty/)
 - [Ubuntu 16.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
+- [Ubuntu 18.04 LTS "Bionic Beaver"](http://releases.ubuntu.com/bionic/)
 
 ## Requirements
 
@@ -54,6 +55,12 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm`
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
+### Ubuntu 18.04 Distro Overrides
+
+| Variable | Description | Value |
+| -------- | ----------- | ----- |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apache2` `apt-utils` `aptitude` `cron` `iproute2` `libfl2` `man` `python-passlib` `rsync` `xz-utils` |
+
 ## Dependencies
 
 This role depends on no other roles.
@@ -72,6 +79,6 @@ BSD
 
 ## Author Information
 
-> Chris Lindbergh
-> sylekta
-
+kso512 (Chris Lindbergh) with contributions from Github users:
+- sylekta
+- timorunge

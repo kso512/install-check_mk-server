@@ -4,6 +4,7 @@
   include_vars:
     file: "{{ item }}"
   with_first_found:
+    - "{{ ansible_distribution_release }}.{{ ansible_distribution }}.yml"
     - "{{ ansible_distribution }}.yml"
     - "default.yml"
   tags:
@@ -43,6 +44,13 @@
   stat:
     path: "/opt/{{ install_check_mk_server_source}}"
   register: check_mk_rpm
+- name: Make sure the man8 folder exists | FILE
+  file:
+    path: /usr/share/man/man8
+    state: directory
+    mode: 0755
+  tags:
+    - install-check-mk-server
 - name: Download Check_MK RAW | GET_URL
   get_url:
     dest: /opt
