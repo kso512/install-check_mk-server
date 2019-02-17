@@ -31,15 +31,6 @@
   register: stat_etc_fstab
   tags:
     - install-check-mk-server
-- name: If /etc/fstab does not exist enter a comment line | LINEINFILE
-  lineinfile:
-    create: yes
-    state: present
-    line: "# /etc/fstab cannot be empty for omd create test to work"
-    path: /etc/fstab
-  when: not stat_etc_fstab.stat.exists
-  tags:
-    - install-check-mk-server
 - name: Make sure the man8 folder exists | FILE
   file:
     path: /usr/share/man/man8
@@ -49,7 +40,7 @@
     - install-check-mk-server
 - name: Test if Check_MK package is on disk already | STAT
   stat:
-    path: "/opt/{{ install_check_mk_server_source}}"
+    path: "/opt/{{ install_check_mk_server_source }}"
   register: install_check_mk_server_package
   tags:
     - install-check-mk-server
