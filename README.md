@@ -12,7 +12,6 @@ Tested with [Travis continuous integration](https://travis-ci.org/) on the follo
 
 - [CentOS-7](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7)
 - [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.9)
-- [Debian 8 "Jessie"](https://www.debian.org/releases/jessie/)
 - [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
 - [Ubuntu 14.04 LTS "Trusty Tahr"](http://releases.ubuntu.com/trusty/)
 - [Ubuntu 16.04 LTS "Xenial Xerus"](http://releases.ubuntu.com/xenial/)
