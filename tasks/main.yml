@@ -25,12 +25,6 @@
   when: ansible_pkg_mgr == "yum"
   tags:
     - install-check-mk-server
-- name: Find out if /etc/fstab is empty | STAT
-  stat:
-    path: /etc/fstab
-  register: stat_etc_fstab
-  tags:
-    - install-check-mk-server
 - name: Make sure the man8 folder exists | FILE
   file:
     path: /usr/share/man/man8
