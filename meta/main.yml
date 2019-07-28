@@ -11,9 +11,11 @@ galaxy_info:
         - 7
     - name: Debian
       versions:
+        - buster
         - stretch
     - name: Ubuntu
       versions:
+        - bionic
         - trusty
         - xenial
   galaxy_tags:
@@ -24,6 +26,7 @@ galaxy_info:
     - cre
     - ubuntu
     - debian
+    - buster
     - stretch
     - bionic
     - trusty
