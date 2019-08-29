@@ -50,7 +50,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python-passlib` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python-passlib` `epel-release` `perl-Net-SNMP` |
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm`
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
@@ -81,3 +81,4 @@ BSD
 kso512 (Chris Lindbergh) with contributions from Github users:
 - sylekta
 - timorunge
+- judouk
