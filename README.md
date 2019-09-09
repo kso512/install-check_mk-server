@@ -25,9 +25,16 @@ Required on host that executes role with APT:
 - python3-apt (python 3)
 
 Required on host that executes role with YUM:
+- EPEL
 - yum
+- perl-Net-SNMP (minimal CentOS7)
 
-If the server has a firewall enabled, it may need to be altered to allow incoming packets on TCP port 80 for the web portal access, and TCP port 514, and UDP ports 162 & 514 for event console input.
+If the server has a firewall enabled, it may need to be altered to allow incoming packets on TCP port 80 for the web portal access, and/or TCP port 514, plus UDP ports 162 & 514 for event console input.
+
+As with any modern Linux deployment, SELinux may come into play.
+
+To fulfill these requirements, I recommend using another Ansible Role.  For example, this role from Jeff Geerling may be used to handle EPEL if needed:
+https://galaxy.ansible.com/geerlingguy/repo-epel
 
 ## Role Variables
 
@@ -50,7 +57,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python-passlib` `epel-release` `perl-Net-SNMP` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python-passlib` |
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm`
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
