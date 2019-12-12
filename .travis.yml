@@ -5,7 +5,6 @@ env:
   - distro: centos7
   - distro: debian9
   - distro: debian10
-  - distro: ubuntu1404
 #  - distro: ubuntu1604
   - distro: ubuntu1804
 services:
