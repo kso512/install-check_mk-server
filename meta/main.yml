@@ -2,7 +2,7 @@ galaxy_info:
   author: Chris Lindbergh
   description: A role to install Check_MK RAW and set up an initial site.
   company: Cold Creek Solutions, Inc.
-  license: BSD
+  license: GPLv2
   min_ansible_version: 2.5
   platforms:
     - name: EL
@@ -16,7 +16,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - bionic
-        - trusty
         - xenial
   galaxy_tags:
     - checkmk
@@ -35,3 +34,4 @@ galaxy_info:
     - el
     - monitoring
 dependencies: []
+...

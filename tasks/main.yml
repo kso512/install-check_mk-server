@@ -109,3 +109,4 @@
     enabled: yes
   tags:
     - install-check-mk-server
+...
