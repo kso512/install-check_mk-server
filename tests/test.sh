@@ -35,8 +35,12 @@ container_id=${container_id:-$timestamp}
 test_idempotence=${test_idempotence:-"true"}
 
 ## Set up vars for Docker setup.
+# CentOS 8
+if [ $distro = 'centos8' ]; then
+  init="/usr/lib/systemd/systemd"
+  opts="--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 # CentOS 7
-if [ $distro = 'centos7' ]; then
+elif [ $distro = 'centos7' ]; then
   init="/usr/lib/systemd/systemd"
   opts="--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 # CentOS 6

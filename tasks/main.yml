@@ -5,6 +5,7 @@
     file: "{{ item }}"
   with_first_found:
     - "{{ ansible_distribution_release }}.{{ ansible_distribution }}.yml"
+    - "{{ ansible_distribution }}.{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_distribution }}.yml"
     - "default.yml"
   tags:
@@ -23,6 +24,15 @@
     state: present
     update_cache: yes
   when: ansible_pkg_mgr == "yum"
+  tags:
+    - install-check-mk-server
+- name: Install pre-requisites | DNF
+  dnf:
+    enablerepo: PowerTools
+    name: "{{ install_check_mk_server_prereqs }}"
+    state: present
+    update_cache: yes
+  when: ansible_pkg_mgr == "dnf"
   tags:
     - install-check-mk-server
 - name: Make sure the man8 folder exists | FILE
@@ -58,6 +68,13 @@
     name: "/opt/{{ install_check_mk_server_source }}"
     state: present
   when: ansible_pkg_mgr == "yum"
+  tags:
+    - install-check-mk-server
+- name: Install Check_MK RAW | DNF
+  dnf:
+    name: "/opt/{{ install_check_mk_server_source }}"
+    state: present
+  when: ansible_pkg_mgr == "dnf"
   tags:
     - install-check-mk-server
 - name: Setup OMD | COMMAND
