@@ -48,9 +48,10 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | -------- | ----------- | ----- |
 | install_check_mk_server_adminpw | Optional password for `cmkadmin` user | undefined |
 | install_check_mk_server_build | Build number included in RPM source filename | `38` |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apt-utils` `cron` `python-passlib` |
+| install_check_mk_server_key_url | URL of Check_MK GPG key file to download | `https://checkmk.com/support/Check_MK-pubkey.gpg` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apache2` `apt-utils` `cron` `dpkg-sig` `python-passlib` |
 | install_check_mk_server_site | Name of initial Check_MK RAW 'site' to provision | `test` |
-| install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb`
+| install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb` |
 | install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://checkmk.com/support/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}` |
 | install_check_mk_server_version | Version of Check_MK RAW to install | `1.6.0p17` |
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `apache2` |
@@ -60,7 +61,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
 | install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python-passlib` |
-| install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm`
+| install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm` |
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
 #### CentOS 8 Distro Overrides
@@ -68,14 +69,14 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
 | install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `cronie` `python3-passlib` `graphviz-gd` |
-| install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm`
+| install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}-el{{ ansible_distribution_major_version }}-{{ install_check_mk_server_build }}.x86_64.rpm` |
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `httpd` |
 
 ### Ubuntu 18.04 Distro Overrides
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apache2` `apt-utils` `aptitude` `cron` `iproute2` `libfl2` `man` `python-passlib` `rsync` `xz-utils` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apache2` `apt-utils` `aptitude` `cron` `dpkg-sig` `iproute2` `libfl2` `man` `python-passlib` `rsync` `xz-utils` |
 
 ## Dependencies
 

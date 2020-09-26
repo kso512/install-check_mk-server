@@ -1,8 +1,8 @@
 ---
 # defaults file for install-check_mk-server
 install_check_mk_server_build: 38
-install_check_mk_server_site: test
 install_check_mk_server_key_url: https://checkmk.com/support/Check_MK-pubkey.gpg
+install_check_mk_server_site: test
 install_check_mk_server_source_url: https://checkmk.com/support/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}
 install_check_mk_server_version: 1.6.0p17
 ...
