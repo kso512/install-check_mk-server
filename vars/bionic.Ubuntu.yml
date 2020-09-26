@@ -5,6 +5,7 @@ install_check_mk_server_prereqs:
   - apt-utils
   - aptitude
   - cron
+  - dpkg-sig
   - iproute2
   - libfl2
   - man

@@ -35,6 +35,26 @@
   when: ansible_pkg_mgr == "dnf"
   tags:
     - install-check-mk-server
+- name: Import a key from a URL | APT_KEY
+  apt_key:
+    url: "{{ install_check_mk_server_key_url }}"
+    state: present
+  when: ansible_pkg_mgr == "apt"
+  tags:
+    - install-check-mk-server
+- name: Import a key from a URL | RPM_KEY
+  rpm_key:
+    key: "{{ install_check_mk_server_key_url }}"
+    state: present
+  when: ansible_pkg_mgr != "apt"
+  tags:
+    - install-check-mk-server
+- name: Update cache | APT
+  apt:
+    update_cache: yes
+  when: ansible_pkg_mgr == "apt"
+  tags:
+    - install-check-mk-server
 - name: Make sure the man8 folder exists | FILE
   file:
     path: /usr/share/man/man8

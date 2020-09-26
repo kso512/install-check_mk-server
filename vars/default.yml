@@ -4,6 +4,7 @@ install_check_mk_server_prereqs:
   - apache2
   - apt-utils
   - cron
+  - dpkg-sig
   - python-passlib
 install_check_mk_server_source: check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb
 install_check_mk_server_web_service: apache2
