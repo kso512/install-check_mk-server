@@ -12,7 +12,6 @@ All tasks are tagged with `install-check-mk-server`.
 
 Tested with [Travis continuous integration](https://travis-ci.org/) on the following distributions:
 
-- [CentOS-6](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.9)
 - [CentOS-7](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7)
 - [CentOS-8](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS8.1905)
 - [Debian 9 "Stretch"](https://www.debian.org/releases/stretch/)
