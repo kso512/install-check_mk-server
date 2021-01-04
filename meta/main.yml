@@ -27,8 +27,6 @@ galaxy_info:
     - buster
     - stretch
     - bionic
-    - trusty
-    - xenial
     - centos
     - el
     - monitoring
