@@ -4,7 +4,7 @@
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kso512/install-check_mk-server)](https://github.com/kso512/install-check_mk-server) ![GitHub Release Date](https://img.shields.io/github/release-date/kso512/install-check_mk-server) ![GitHub repo size](https://img.shields.io/github/repo-size/kso512/install-check_mk-server) ![GitHub issues](https://img.shields.io/github/issues-raw/kso512/install-check_mk-server) [![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Naereen/StrapDown.js/network/)
 
-An [Ansible](https://www.ansible.com/) [Role](http://docs.ansible.com/ansible/playbooks_roles.html#roles) to install [Check_MK RAW](http://mathias-kettner.com/check_mk_introduction.html) and set up an initial site.
+An [Ansible](https://www.ansible.com/) [Role](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html) to install [Check_MK RAW](https://checkmk.com/product/raw-edition) and set up an initial site.
 
 All tasks are tagged with `install-check-mk-server`.
 
@@ -39,7 +39,7 @@ To fulfill these requirements, I recommend using another Ansible Role.  For exam
 
 ## Role Variables
 
-To enable multi-distro support, the role defines distro-specific variables with the [`include_vars` and `with_first_found`](http://docs.ansible.com/ansible/include_vars_module.html) mechanisms.
+To enable multi-distro support, the role defines distro-specific variables with the [`include_vars` and `with_first_found`](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_vars_module.html) mechanisms.
 
 ### Defaults
 
@@ -75,7 +75,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 
 | Variable | Description | Value |
 | -------- | ----------- | ----- |
-| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apache2` `apt-utils` `aptitude` `cron` `dpkg-sig` `iproute2` `libfl2` `man` `python-passlib` `rsync` `xz-utils` |
+| install_check_mk_server_prereqs | List of packages to install before installing Check_MK RAW | `apache2` `apt-utils` `aptitude` `cron` `dpkg-sig` `iproute2` `libfl2` `man` `python3-passlib` `rsync` `xz-utils` |
 
 ## Dependencies
 
