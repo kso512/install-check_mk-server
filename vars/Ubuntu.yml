@@ -9,7 +9,7 @@ install_check_mk_server_prereqs:
   - iproute2
   - libfl2
   - man
-  - python-passlib
+  - python3-passlib
   - rsync
   - xz-utils
 install_check_mk_server_source: check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb
