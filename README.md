@@ -52,7 +52,7 @@ To enable multi-distro support, the role defines distro-specific variables with 
 | install_check_mk_server_site | Name of initial Check_MK RAW 'site' to provision | `test` |
 | install_check_mk_server_source | Filename of the installation source | `check-mk-raw-{{ install_check_mk_server_version }}_0.{{ ansible_distribution_release }}_amd64.deb` |
 | install_check_mk_server_source_url | URL of Check_MK RAW installation file to download | `https://download.checkmk.com/checkmk/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}` |
-| install_check_mk_server_version | Version of Check_MK RAW to install | `2.0.0p1` |
+| install_check_mk_server_version | Version of Check_MK RAW to install | `2.0.0p2` |
 | install_check_mk_server_web_service | Name of the Apache2 service to control | `apache2` |
 
 ### CentOS Distro Overrides

@@ -4,5 +4,5 @@ install_check_mk_server_build: 38
 install_check_mk_server_key_url: https://download.checkmk.com/checkmk/Check_MK-pubkey.gpg
 install_check_mk_server_site: test
 install_check_mk_server_source_url: https://download.checkmk.com/checkmk/{{ install_check_mk_server_version }}/{{ install_check_mk_server_source }}
-install_check_mk_server_version: 2.0.0p1
+install_check_mk_server_version: 2.0.0p2
 ...
