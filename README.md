@@ -1,6 +1,6 @@
 # [install-check_mk-server](https://galaxy.ansible.com/kso512/install-check_mk-server/)
 
-[![Build Status](https://travis-ci.com/kso512/install-check_mk-server.svg?branch=master)](https://travis-ci.com/kso512/install-check_mk-server) ![Ansible Role](https://img.shields.io/ansible/role/d/16931) [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/) [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org) ![GitHub](https://img.shields.io/github/license/kso512/install-check_mk-server)
+![Ansible Role](https://img.shields.io/ansible/role/d/16931) [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/) [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org) ![GitHub](https://img.shields.io/github/license/kso512/install-check_mk-server)
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kso512/install-check_mk-server)](https://github.com/kso512/install-check_mk-server) ![GitHub Release Date](https://img.shields.io/github/release-date/kso512/install-check_mk-server) ![GitHub repo size](https://img.shields.io/github/repo-size/kso512/install-check_mk-server) ![GitHub issues](https://img.shields.io/github/issues-raw/kso512/install-check_mk-server) [![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Naereen/StrapDown.js/network/)
 
