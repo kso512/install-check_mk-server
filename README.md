@@ -10,7 +10,7 @@ All tasks are tagged with `install-check-mk-server`.
 
 **I do NOT recommend the default configuration for unprotected connection directly to the Internet, as the server configuration includes unencrypted HTTP access.**
 
-Tested with [Travis continuous integration](https://travis-ci.com/) on the following distributions:
+Tested manually with the [Ansible Role Test Shim Script from Jeff Geerling](https://gist.github.com/geerlingguy/73ef1e5ee45d8694570f334be385e181) on the following distributions:
 
 - [CentOS-7](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7)
 - [CentOS-8](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS8.1905)
